@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style2.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+    </div>
+   
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+    <div class="container">
+    <div class="image">
+        <img src="static/css/cutout.png" alt="Your Image" class="slide-out-left">
+      </div>
+      <div class="form">
+    <form action="/login" method="post">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Aadhar No:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="flatNumber">Flat Number:</label>
+        <input type="text" id="flatNumber" name="flatNumber" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</div>
+<script >
+document.addEventListener('DOMContentLoaded', function() {
+    const image = document.querySelector('.image');
+    const form = document.querySelector('.form');
+    image.classList.add('slide-out-left');
+    form.classList.add('slide-out-right');
+  });
+  </script>
+    <footer><div class="footer-tabs">
+    </div></footer>
+</body>
+</html>

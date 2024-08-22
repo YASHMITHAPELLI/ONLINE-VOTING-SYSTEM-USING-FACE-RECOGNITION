@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style3.css') }}">
+</head>
+<body>
+    <div class="overlay"></div> 
+    <div class="navbar">
+        <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+    </div>
+<center><h1>Vote for Your Candidate</h1></center>
+<center><div class="form">
+<form action="/vote_handler" method="post">
+    <button id="captureFaceBtn">Capture Face</button><br><br>
+    {% for candidate in candidates %}
+    <label>
+        <input type="radio" name="selectedCandidate" value="{{ candidate['name'] }}">
+        {{ candidate['name'] }}
+    </label><br>
+    {% endfor %}
+    <br>
+    <button id="voteBtn" type="submit" disabled>Vote</button>
+</form>
+</div></center>
+<script type="text/javascript">
+     // Function to enable the vote button
+     function enableVoteButton() {
+        document.getElementById("voteBtn").disabled = false;
+    }
+    // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    // const maxAllowed = 2;
+
+    // checkboxes.forEach(checkbox => {
+    //   checkbox.addEventListener('change', function() {
+    //     const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    //     if (checkedCheckboxes.length > maxAllowed) {
+    //       this.checked = false;
+    //     }
+    //   });
+    // });
+
+    // Add event listener to the capture face button
+    document.getElementById("captureFaceBtn").addEventListener("click", function() {
+        // Make an AJAX request to the server to capture the face
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/capture_face", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    // Face recognition successful, enable the vote button
+                    enableVoteButton();
+                } else {
+                    alert("Face recognition failed. Please try again.");
+                }
+            } else {
+                alert("Error capturing face. Please try again later.");
+            }
+        };
+        xhr.send();
+    });
+
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+    <footer><div class="footer-tabs">
+        <!-- <a href="/aboutus" class="tab">About Us</a>
+        <a href="/contactus" class="tab">Contact </a> -->
+    </div></footer>
+</body>
+</html>

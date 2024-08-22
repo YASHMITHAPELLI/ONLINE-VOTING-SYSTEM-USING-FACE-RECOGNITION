@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+     /* background: rgba(255, 255, 255,0.01) url('analog-landscape-city-with-buildings.jpg') no-repeat center center fixed; */
+    background-size: cover;
+    font-weight: 700;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #201e1e;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    height: 22px;
+}
+.footer-tabs {
+    display: flex; /* Use flexbox to arrange tabs */
+    justify-content: center; /* Align tabs to the center horizontally */
+}
+.tab {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove default underline */
+    padding: 5px 10px; /* Add padding for better spacing */
+    margin: 0 10px; /* Add margin between tabs */
+    border-radius: 5px; /* Add some border radius for rounded corners */
+    background-color:#201e1e; /* Set background color for tabs */
+}
+
+.tab:hover {
+    background-color: #888; /* Change background color on hover */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #201e1e;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+.soc{
+    color: rgb(255, 77, 0);
+}
+.logo {
+    flex: 1;
+    margin-left: 30px;
+    font-size: 35px;
+    border: black 1px;
+}
+.vote{
+    color: rgb(0, 179, 255);
+}
+    </style>
+</head>
+<body>
+    
+<style>
+    body{
+        /* background: rgba(255, 255, 255,0.01) url('/static/css/IMG-20180525-WA0037.jpg') no-repeat center center fixed; */
+        background-color:  #efd8d8;
+    }
+    /* Style for the table */
+    table {
+        width: 50%; /* Set the width of the table to 100% */
+        border-collapse: collapse; /* Collapse the borders between cells */
+        margin-bottom: 20px; /* Add some space below the table */
+        border: 2px solid #1c1c1c;
+    }
+
+    /* Style for table headers */
+    th {
+        background-color: #007bff; /* Set background color of header cells */
+        color: #fff; /* Set text color of header cells */
+        padding: 10px; /* Add padding to header cells */
+    }
+
+    /* Style for table rows */
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Set background color of even rows */
+    }
+
+    /* Style for table cells */
+    td {
+        padding: 10px; /* Add padding to cells */
+    }
+    h1{
+        margin-top: 8%;
+    }
+</style>
+    <div class="navbar">
+        <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+    </div><center>
+    <h1>Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for candidate in candidates %}
+            <tr>
+                <td>{{ candidate['name'] }}</td>
+                <td>{{ candidate['vote'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+    <footer><div class="footer-tabs">
+        <!-- <a href="/aboutus" class="tab">About Us</a>
+        <a href="/contactus" class="tab">Contact </a> -->
+    </div></footer>
+</body>
+</html>

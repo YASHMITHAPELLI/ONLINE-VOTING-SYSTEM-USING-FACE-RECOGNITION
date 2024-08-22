@@ -1,0 +1,106 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #201e1e;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    height: 22px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #201e1e;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+}
+.soc{
+    color: rgb(255, 77, 0);
+}
+.logo {
+    flex: 1;
+    margin-left: 30px;
+    font-size: 35px;
+    border: black 1px;
+}
+.vote{
+    color: rgb(0, 179, 255);
+}
+header {
+    background-color: #007bff; /* Set background color of the header */
+    color: #fff; /* Set text color of the header */
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.content {
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding-right: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff; /* Set background color of the form */
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    width: 440px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to the form */
+   
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    color: #007bff; /* Set text color of section headers */
+    margin-top: 0;
+}
+
+p {
+    margin: 0;
+}

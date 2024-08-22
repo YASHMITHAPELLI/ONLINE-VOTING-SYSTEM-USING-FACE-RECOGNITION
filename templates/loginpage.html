@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your System Name</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+    <!-- <div><button class="login-tab" onclick="showLoginForm()">Login</button></div> -->
+</div>
+<div id="loginFormContainer">
+    <form id="loginForm" action="{{ url_for('login') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</div>
+<footer><div class="footer-tabs">
+    <a href="/aboutus" class="tab">About Us</a>
+    <a href="/contactus" class="tab">Contact </a>
+    <!-- <a href="#" class="tab"></a> -->
+</div></footer>
+
+<!-- <script>
+    function showLoginForm() {
+        document.getElementById("loginFormContainer").style.display = "block";
+    }
+</script> -->
+
+</body>
+</html>

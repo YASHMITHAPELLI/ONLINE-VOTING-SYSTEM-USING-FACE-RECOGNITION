@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/abtcon.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+    </div>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <div class="content">
+        <section>
+            <h2>Contact Form</h2>
+            <center>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </center>
+        </section>
+        <section>
+            <h2>Contact Information</h2>
+            <p>Email: example@example.com</p>
+            <p>Phone: +1234567890</p>
+            <!-- Add more contact information as needed -->
+        </section>
+    </div>
+    <footer><div class="footer-tabs">
+    </div></footer>
+</body>
+</html>

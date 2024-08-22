@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/stylev.css') }}">
+</head>
+<body>
+    <div class="sllider">
+    <div class="navbar">
+        <div class="logo"><Span class="soc">Soc</span><span class="vote">Vote</span></div>
+            <div class="logo" id="tab">
+                <a href="{{ url_for('login') }}"><button>Vote</button></a>
+                <a href="{{ url_for('results') }}"><button>Results</button></a>
+            </div>
+    </div>
+    <center><h1>Welcome to the Voting System</h1></center>
+</div>
+    <footer><div class="footer-tabs">
+        <a href="/aboutus" class="tab">About Us</a>
+        <a href="/contactus" class="tab">Contact </a>
+    </div></footer>
+</body>
+</html>
